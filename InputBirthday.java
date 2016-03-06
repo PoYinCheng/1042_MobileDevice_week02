@@ -13,7 +13,7 @@ public class InputBirthday {
 		name = scanner.next();
 
 		// 輸入生日
-		System.out.println("請輸入生日:");
+		System.out.println("請輸入生日");
 		while (true) {
 			try {
 				System.out.print("西元年:");
@@ -47,11 +47,13 @@ public class InputBirthday {
 					System.out.println("輸入日期超出範圍 !");
 				else if ((month == 4 || month == 6 || month == 9 || month == 11) && (day < 1 || day > 30))
 					System.out.println("輸入日期超出範圍 !");
-				// 西元年份除以4不可整除，除以100可整除，除以400不可整除，為平年。
-				else if ((year % 4 != 0 && year % 100 == 0 && year % 400 != 0) && month == 2 && (day < 1 || day > 28))
+				// 西元年份除以4不可整除，為平年。
+				// 西元年份除以100可整除，且除以400不可整除，為平年
+				else if ((year % 4 != 0 || (year % 100 == 0 && year % 400 != 0)) && month == 2 && (day < 1 || day > 28))
 					System.out.println("輸入日期超出範圍 !");
-				// 西元年份除以4可整除，除以100不可整除，除以400可整除，為閏年。
-				else if ((year % 4 == 0 && year % 100 != 0 && year % 400 == 0) && month == 2 && (day < 1 || day > 29))
+				// 西元年份除以4可整除，且除以100不可整除，為閏年。
+				// 西元年份除以400可整除，為閏年。
+				else if (((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) && month == 2 && (day < 1 || day > 29))
 					System.out.println("輸入日期超出範圍 !");
 				else
 					break;
