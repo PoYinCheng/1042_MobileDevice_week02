@@ -98,12 +98,10 @@ class Oval extends Circle {
 					angle = oval.inputAngle();
 					oval.lr = rList[num - 1][0];
 					oval.sr = rList[num - 1][1];
-					// System.out.printf("©·ªø=%.2f\n", circle.Arc(angle));
+					System.out.printf("©Pªø=%.2f\n", oval.Arc(360));
 					System.out.printf("­±¿n=%.2f\n", oval.Pie(angle));
 				}
 			}
 		}
-
 	}
-
 }
